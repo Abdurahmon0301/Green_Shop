@@ -51,8 +51,8 @@ function decrease() {
 </script>
 
 <template>
-  <section class="container mx-auto p-4 md:p-6 lg:p-8">
-    <section class="my-4">
+  <section class="container mx-auto p-4 md:p-6 lg:p-8" data-aos="fade-up">
+    <section class="my-4" data-aos="fade-down">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -74,8 +74,8 @@ function decrease() {
       </Breadcrumb>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-8">
-      <div class="flex flex-col md:flex-row gap-4 items-center">
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-8" data-aos="fade-up">
+      <div class="flex flex-col md:flex-row gap-4 items-center" data-aos="zoom-in">
         <div
           class="flex flex-row md:flex-col gap-4 w-full md:w-24 justify-center"
         >
@@ -101,7 +101,7 @@ function decrease() {
         </Card>
       </div>
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4" data-aos="fade-left">
         <h2 class="text-2xl lg:text-3xl font-semibold">Barberton Daisy</h2>
         <p class="text-green-600 text-xl lg:text-2xl font-bold">$119.00</p>
         <div class="flex items-center gap-2">
@@ -221,7 +221,7 @@ function decrease() {
       </div>
     </section>
 
-    <section class="w-full mt-16 md:mt-20">
+    <section class="w-full mt-16 md:mt-20" data-aos="fade-up">
       <div class="flex flex-col gap-y-10">
         <div class="flex gap-5 md:gap-10 border-b border-gray-200 pb-2">
           <button
@@ -306,11 +306,11 @@ function decrease() {
       </div>
     </section>
 
-    <p class="text-xl md:text-2xl font-bold text-green-600 my-16 md:my-20">
+    <p class="text-xl md:text-2xl font-bold text-green-600 my-16 md:my-20" data-aos="fade-up">
       Related Products
     </p>
-    <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-      <div class="cursor-pointer">
+    <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6" data-aos="fade-up">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -321,7 +321,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">Angel Wing Begonia</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$169.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -332,7 +332,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">African Violet</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$199.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -343,7 +343,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">Beach Spider Lily</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$129.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -354,7 +354,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">Blushing Bromeliad</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$139.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -367,6 +367,6 @@ function decrease() {
       </div>
     </section>
 
-    <section><End></End></section>
+    <section data-aos="fade-up"><End></End></section>
   </section>
 </template>

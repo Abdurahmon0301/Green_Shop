@@ -16,8 +16,12 @@ const modelValue = ref([0, 500]);
   >
     <section
       class="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-0 py-8 lg:py-16"
+      data-aos="fade-up"
     >
-      <div class="flex flex-col gap-4 sm:gap-6 text-center lg:text-left">
+      <div
+        class="flex flex-col gap-4 sm:gap-6 text-center lg:text-left"
+        data-aos="fade-right"
+      >
         <div><p class="text-lg sm:text-xl">Welcome to green shop</p></div>
         <div>
           <p class="text-3xl sm:text-5xl lg:text-8xl font-black leading-tight">
@@ -38,13 +42,14 @@ const modelValue = ref([0, 500]);
           >Shop Now</Button
         >
       </div>
-      <div class="w-full lg:w-auto flex justify-center">
+      <div class="w-full lg:w-auto flex justify-center" data-aos="zoom-in">
         <img src="../assets/Flower0.png" alt="" class="max-w-full h-auto" />
       </div>
     </section>
     <div class="flex flex-col xl:flex-row gap-8 xl:gap-15">
       <section
         class="w-full xl:min-w-[310px] xl:w-auto flex flex-col gap-6 lg:gap-10 px-0 xl:px-6"
+        data-aos="fade-up"
       >
         <div class="space-y-6 lg:space-y-8">
           <div class="flex flex-col gap-3 sm:gap-4">
@@ -52,52 +57,69 @@ const modelValue = ref([0, 500]);
             <div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-1 gap-2">
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
               >
                 House Plants<span class="hidden sm:inline">(33)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="50"
               >
                 Potter Plants<span class="hidden sm:inline">(12)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="100"
               >
                 Seeds<span class="hidden sm:inline">(65)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="150"
               >
                 Small Plants<span class="hidden sm:inline">(39)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="200"
               >
                 Big Plants<span class="hidden sm:inline">(23)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="250"
               >
                 Succulents<span class="hidden sm:inline">(17)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="300"
               >
                 Trerrariums<span class="hidden sm:inline">(19)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="350"
               >
                 Gardening<span class="hidden sm:inline">(13)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="400"
               >
                 Accessories<span class="hidden sm:inline">(18)</span>
               </p>
             </div>
           </div>
-          <div class="flex flex-col gap-3 sm:gap-4">
+          <div class="flex flex-col gap-3 sm:gap-4" data-aos="fade-up">
             <p class="text-xl sm:text-2xl font-bold">Price Range</p>
             <div class="cursor-pointer px-2">
               <Slider
@@ -122,26 +144,31 @@ const modelValue = ref([0, 500]);
               >Filter</Button
             >
           </div>
-          <div class="flex flex-col gap-3 sm:gap-4">
+          <div class="flex flex-col gap-3 sm:gap-4" data-aos="fade-up">
             <p class="text-lg font-bold">Size</p>
             <div class="grid grid-cols-3 xl:grid-cols-1 gap-1">
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
               >
                 Small<span class="hidden sm:inline">(119)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="50"
               >
                 Medium<span class="hidden sm:inline">(86)</span>
               </p>
               <p
                 class="pl-2 xl:pl-4 hover:text-green-600 cursor-pointer transition-all duration-150 flex justify-between text-sm sm:text-base"
+                data-aos="fade-right"
+                data-aos-delay="100"
               >
                 Large<span class="hidden sm:inline">(78)</span>
               </p>
             </div>
-            <div class="mt-4 hidden xl:block">
+            <div class="mt-4 hidden xl:block" data-aos="zoom-in">
               <img
                 src="../assets/sale.png"
                 alt=""
@@ -151,18 +178,20 @@ const modelValue = ref([0, 500]);
           </div>
         </div>
       </section>
-      <section class="w-full">
+      <section class="w-full" data-aos="fade-up">
         <Cards />
       </section>
     </div>
     <section
       class="flex flex-col lg:flex-row justify-between gap-8 lg:gap-0 mt-16 lg:mt-30"
+      data-aos="fade-up"
     >
       <div
         class="flex flex-col sm:flex-row items-center justify-between w-full lg:min-w-[586px] gap-6 sm:gap-4"
       >
         <div
           class="w-full sm:max-w-[384px] max-h-[384px] overflow-hidden order-2 sm:order-1"
+          data-aos="zoom-in"
         >
           <img
             class="w-full h-auto max-h-96 transition-all duration-150 hover:scale-105"
@@ -172,6 +201,7 @@ const modelValue = ref([0, 500]);
         </div>
         <div
           class="flex flex-col gap-4 sm:gap-7 items-center sm:items-end text-center sm:text-right order-1 sm:order-2"
+          data-aos="fade-left"
         >
           <p class="text-xl sm:text-3xl font-bold max-w-full sm:max-w-60">
             Summer cactus & succulents
@@ -188,6 +218,7 @@ const modelValue = ref([0, 500]);
       >
         <div
           class="w-full sm:max-w-[384px] max-h-[384px] overflow-hidden order-2 sm:order-1"
+          data-aos="zoom-in"
         >
           <img
             class="w-full h-auto max-h-96 transition-all duration-150 hover:scale-105"
@@ -197,6 +228,7 @@ const modelValue = ref([0, 500]);
         </div>
         <div
           class="flex flex-col gap-4 sm:gap-7 items-center sm:items-end text-center sm:text-right order-1 sm:order-2"
+          data-aos="fade-left"
         >
           <p class="text-xl sm:text-3xl font-bold max-w-full sm:max-w-60">
             Styling Trends & much more
@@ -209,7 +241,7 @@ const modelValue = ref([0, 500]);
         </div>
       </div>
     </section>
-    <section class="mt-12 lg:mt-20">
+    <section class="mt-12 lg:mt-20" data-aos="fade-up">
       <div class="flex flex-col gap-8 lg:gap-10 items-center">
         <div class="flex flex-col items-center gap-4 lg:gap-6 text-center">
           <p class="text-xl sm:text-2xl font-bold">Our Blog Posts</p>
@@ -221,7 +253,7 @@ const modelValue = ref([0, 500]);
         <div
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-x-10 justify-center items-start"
         >
-          <div class="flex flex-col gap-2 max-w-sm mx-auto">
+          <div class="flex flex-col gap-2 max-w-sm mx-auto" data-aos="fade-up">
             <div class="w-full max-w-[340px] overflow-hidden mx-auto">
               <img
                 class="w-full h-auto transition-all duration-150 hover:scale-110"
@@ -242,7 +274,11 @@ const modelValue = ref([0, 500]);
               >Read more ⟶</Button
             >
           </div>
-          <div class="flex flex-col gap-2 max-w-sm mx-auto">
+          <div
+            class="flex flex-col gap-2 max-w-sm mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
             <div class="w-full max-w-[340px] overflow-hidden mx-auto">
               <img
                 class="w-full h-auto transition-all duration-150 hover:scale-110"
@@ -263,7 +299,11 @@ const modelValue = ref([0, 500]);
               >Read more ⟶</Button
             >
           </div>
-          <div class="flex flex-col gap-2 max-w-sm mx-auto">
+          <div
+            class="flex flex-col gap-2 max-w-sm mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div class="w-full max-w-[340px] overflow-hidden mx-auto">
               <img
                 class="w-full h-auto transition-all duration-150 hover:scale-110"
@@ -284,7 +324,11 @@ const modelValue = ref([0, 500]);
               >Read more ⟶</Button
             >
           </div>
-          <div class="flex flex-col gap-2 max-w-sm mx-auto">
+          <div
+            class="flex flex-col gap-2 max-w-sm mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             <div class="w-full max-w-[340px] overflow-hidden mx-auto">
               <img
                 class="w-full h-auto transition-all duration-150 hover:scale-110"

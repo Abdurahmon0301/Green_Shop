@@ -21,7 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Minus, Plus, ShoppingCart, Heart } from "lucide-vue-next";
 import End from "@/components/End.vue";
 
-const selec = ref('page1');
+const selec = ref("page1");
 const selectPage = (page) => {
   selec.value = page;
 };
@@ -51,8 +51,8 @@ function decrease() {
 </script>
 
 <template>
-  <section class="container mx-auto p-4 md:p-6 lg:p-8">
-    <section class="my-4">
+  <section class="container mx-auto p-4 md:p-6 lg:p-8" data-aos="fade-up">
+    <section class="my-4" data-aos="fade-down">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -74,9 +74,17 @@ function decrease() {
       </Breadcrumb>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-8">
-      <div class="flex flex-col md:flex-row gap-4 items-center">
-        <div class="flex flex-row md:flex-col gap-4 w-full md:w-24 justify-center">
+    <section
+      class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-8"
+      data-aos="fade-up"
+    >
+      <div
+        class="flex flex-col md:flex-row gap-4 items-center"
+        data-aos="zoom-in"
+      >
+        <div
+          class="flex flex-row md:flex-col gap-4 w-full md:w-24 justify-center"
+        >
           <img
             v-for="n in 4"
             :key="n"
@@ -90,12 +98,16 @@ function decrease() {
         </div>
         <Card class="flex-1 w-full md:w-auto flex items-center justify-center">
           <CardContent class="p-6">
-            <img src="@/assets/Flower7.png" alt="Product" class="rounded-xl w-full max-h-96 object-contain" />
+            <img
+              src="@/assets/Flower7.png"
+              alt="Product"
+              class="rounded-xl w-full max-h-96 object-contain"
+            />
           </CardContent>
         </Card>
       </div>
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4" data-aos="fade-left">
         <h2 class="text-2xl lg:text-3xl font-semibold">Barberton Daisy</h2>
         <p class="text-green-600 text-xl lg:text-2xl font-bold">$119.00</p>
         <div class="flex items-center gap-2">
@@ -197,21 +209,25 @@ function decrease() {
         <div class="flex gap-4 mt-3 items-center">
           <span class="text-gray-500">Share this products:</span>
           <div class="flex gap-3 text-gray-600 cursor-pointer">
-            <img src="@/assets/facebook.svg" alt="Facebook" class="w-6 h-6" /><img
+            <img
+              src="@/assets/facebook.svg"
+              alt="Facebook"
+              class="w-6 h-6"
+            /><img
               src="@/assets/instagram.svg"
               alt="Instagram"
               class="w-6 h-6"
-            /><img src="@/assets/twitter.svg" alt="Twitter" class="w-6 h-6" /><img
-              src="@/assets/linkedin.svg"
-              alt="LinkedIn"
+            /><img
+              src="@/assets/twitter.svg"
+              alt="Twitter"
               class="w-6 h-6"
-            />
+            /><img src="@/assets/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="w-full mt-16 md:mt-20">
+    <section class="w-full mt-16 md:mt-20" data-aos="fade-up">
       <div class="flex flex-col gap-y-10">
         <div class="flex gap-5 md:gap-10 border-b border-gray-200 pb-2">
           <button
@@ -238,7 +254,10 @@ function decrease() {
           </button>
         </div>
 
-        <div v-if="selec === 'page1'" class="flex flex-col gap-y-6 md:gap-y-8 text-sm md:text-base">
+        <div
+          v-if="selec === 'page1'"
+          class="flex flex-col gap-y-6 md:gap-y-8 text-sm md:text-base"
+        >
           <p class="text-gray-600">
             The ceramic cylinder planters come with a wooden stand to help
             elevate your plants off the ground. The ceramic cylinder planters
@@ -288,14 +307,22 @@ function decrease() {
           </div>
         </div>
         <div v-if="selec === 'page2'" class="text-center">
-            <p class="text-gray-600">There are no reviews yet.</p>
+          <p class="text-gray-600">There are no reviews yet.</p>
         </div>
       </div>
     </section>
 
-    <p class="text-xl md:text-2xl font-bold text-green-600 my-16 md:my-20">Related Products</p>
-    <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-      <div class="cursor-pointer">
+    <p
+      class="text-xl md:text-2xl font-bold text-green-600 my-16 md:my-20"
+      data-aos="fade-up"
+    >
+      Related Products
+    </p>
+    <section
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+      data-aos="fade-up"
+    >
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -306,7 +333,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">Angel Wing Begonia</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$169.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -317,7 +344,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">African Violet</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$199.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -328,7 +355,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">Beach Spider Lily</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$129.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -339,7 +366,7 @@ function decrease() {
         <p class="mt-2 text-sm md:text-base">Blushing Bromeliad</p>
         <p class="text-green-600 font-bold text-sm md:text-base">$139.00</p>
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
             class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -352,6 +379,6 @@ function decrease() {
       </div>
     </section>
 
-    <section><End></End></section>
+    <section data-aos="fade-up"><End></End></section>
   </section>
 </template>

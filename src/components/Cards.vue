@@ -24,9 +24,11 @@ import {
   <div
     class="container mx-auto flex flex-col items-center px-4"
     v-if="$route.path === '/shop' || $route.path === '/Dashboard'"
+    data-aos="fade-up"
   >
     <section
       class="flex flex-col md:flex-row items-start md:items-center justify-between w-full mt-4 md:mt-8"
+      data-aos="fade-up"
     >
       <div class="flex flex-col md:flex-row gap-2 md:gap-8 mb-4 md:mb-0">
         <p class="font-bold">All Plants</p>
@@ -57,9 +59,10 @@ import {
     <div class="flex flex-col gap-10 md:gap-20 items-center w-full mt-8">
       <section
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
+        data-aos="fade-up"
       >
         <RouterLink to="shop/Card">
-          <div class="w-full cursor-pointer">
+          <div class="w-full cursor-pointer" data-aos="zoom-in">
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -78,7 +81,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card1">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -97,7 +104,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card2">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -116,7 +127,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card3">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -135,7 +150,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card4">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -154,7 +173,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card5">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="250"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -173,7 +196,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card6">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -192,7 +219,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card7">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="350"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -211,7 +242,11 @@ import {
           </div>
         </RouterLink>
         <RouterLink to="shop/Card8">
-          <div class="w-full cursor-pointer">
+          <div
+            class="w-full cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
                 class="transition-all duration-150 hover:scale-110 w-full object-cover"
@@ -231,7 +266,7 @@ import {
         </RouterLink>
       </section>
 
-      <div class="w-full flex justify-center">
+      <div class="w-full flex justify-center" data-aos="fade-up">
         <Pagination
           v-slot="{ page }"
           :items-per-page="10"
@@ -260,6 +295,7 @@ import {
   <section
     v-if="$route.path === '/shop'"
     class="container mx-auto mt-16 md:mt-24"
+    data-aos="fade-up"
   >
     <End></End>
   </section>

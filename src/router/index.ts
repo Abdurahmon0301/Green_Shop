@@ -34,6 +34,16 @@ const router = createRouter({
         { path: "Card8", name: "Card8", component: product("Card8") },
       ],
     },
+    {
+      path: "/banner",
+      name: "card",
+      component: lazyLoad("banner"),
+    },
+    {
+      path: "/cart",
+      name: "cart",
+      component: lazyLoad("cart"),
+    },
   ],
   scrollBehavior() {
     return { top: 0 };

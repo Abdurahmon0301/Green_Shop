@@ -2,6 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { ref } from "vue";
 import { Switch } from "@/components/ui/switch";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const isDark = ref(false);
 const toggleTheme = () => {
   isDark.value = !isDark.value;
@@ -16,7 +18,10 @@ const showMobileMenu = ref(false);
 </script>
 
 <template>
-  <header class="flex items-center justify-between px-4 md:px-6 lg:px-12 py-6">
+  <header
+    class="flex items-center justify-between px-4 md:px-6 lg:px-12 py-6"
+    data-aos="fade-down"
+  >
     <div>
       <img
         class="max-w-[120px] md:max-w-40 lg:max-w-60"
@@ -61,7 +66,7 @@ const showMobileMenu = ref(false);
         </svg>
       </div>
 
-      <div class="cursor-pointer">
+      <div class="cursor-pointer" @click="router.push('/cart')">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -134,7 +139,7 @@ const showMobileMenu = ref(false);
 
   <nav
     :class="{ block: showMobileMenu, hidden: !showMobileMenu }"
-    class="md:hidden w-full bg-white dark:bg-gray-800 absolute top-[88px] left-0 z-50 shadow-md p-4"
+    class="md:hidden w-full bg-white dark:bg-gray-800 fixed top-[88px] left-0 right-0 z-[9999] shadow-md p-4"
   >
     <div class="flex flex-col items-center gap-4 text-lg font-medium">
       <RouterLink to="/Dashboard" @click="showMobileMenu = false">
