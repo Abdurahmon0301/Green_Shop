@@ -13,7 +13,7 @@ const modelValue = ref([0, 500]);
 <template>
   <section
     :class="{ dark: isDark }"
-    class="container mx-auto px-4 sm:px-6 lg:px-8"
+    class="container mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden overflow-y-auto no-scrollbar"
   >
     <section
       class="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-0 py-8 lg:py-16"
@@ -354,5 +354,16 @@ const modelValue = ref([0, 500]);
       </div>
     </section>
   </section>
-  <section class="px-4 sm:px-8 lg:px-50"><End></End></section>
+  <section class="px-4 sm:px-8 lg:px-50 overflow-x-hidden no-scrollbar">
+    <End></End>
+  </section>
 </template>
+<style scoped>
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+</style>

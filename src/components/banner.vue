@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-10 md:gap-20 items-center w-full mt-8">
     <section
-      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
+      class="grid grid-cols-4 max-sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8"
       data-aos="fade-up"
     >
       <RouterLink to="shop/Card">

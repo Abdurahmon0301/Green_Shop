@@ -8,32 +8,39 @@ import { Button } from "@/components/ui/button";
 <template>
   <section class="container mx-auto p-4 md:p-6 lg:p-8">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-xl md:text-2xl font-semibold">Your Likes</h2>
-      <RouterLink to="/shop" class="text-green-700">Back to Shop</RouterLink>
+      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold">Your Likes</h2>
+      <RouterLink to="/shop" class="text-green-700 text-sm sm:text-base"
+        >Back to Shop</RouterLink
+      >
     </div>
     <div v-if="!wishlist.items.length" class="text-gray-500">
       No liked products yet.
     </div>
-    <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div
+      v-else
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-5"
+    >
       <div
         v-for="item in wishlist.items"
         :key="item.id"
-        class="border rounded-md p-3 flex flex-col gap-3"
+        class="border rounded-md p-2 sm:p-3 flex flex-col gap-2 sm:gap-3"
       >
         <img
           :src="item.image"
           :alt="item.name"
-          class="w-full h-40 object-cover rounded"
+          class="w-full h-28 sm:h-36 md:h-40 object-cover rounded"
         />
         <div class="flex flex-col gap-1">
-          <p class="font-medium">{{ item.name }}</p>
-          <p class="text-green-600 font-semibold">
+          <p class="font-medium text-sm sm:text-base truncate">
+            {{ item.name }}
+          </p>
+          <p class="text-green-600 font-semibold text-sm sm:text-base">
             ${{ item.price.toFixed(2) }}
           </p>
         </div>
         <div class="mt-auto flex items-center gap-2">
           <Button
-            class="flex-1"
+            class="flex-1 text-xs sm:text-sm"
             @click="
               cart.add(
                 {
@@ -47,7 +54,10 @@ import { Button } from "@/components/ui/button";
             "
             >Add to Cart</Button
           >
-          <Button variant="outline" @click="wishlist.remove(item.id)"
+          <Button
+            variant="outline"
+            class="text-xs sm:text-sm"
+            @click="wishlist.remove(item.id)"
             >Remove</Button
           >
         </div>

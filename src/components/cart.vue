@@ -22,16 +22,15 @@ const currency = (n: number | undefined | null) => {
 
 const subtotal = computed(() => cart.subtotal);
 
-// total hisoblash
 const total = computed(() =>
   Math.max(subtotal.value - discount.value + shipping.value, 0)
 );
 
 function applyCoupon() {
   if (coupon.value.toLowerCase() === "sale10") {
-    discount.value = subtotal.value * 0.1; // 10% chegirma
+    discount.value = subtotal.value * 0.1;
   } else if (coupon.value.toLowerCase() === "free") {
-    discount.value = subtotal.value; // hammasi bepul
+    discount.value = subtotal.value;
   } else {
     discount.value = 0;
   }
@@ -41,13 +40,11 @@ function applyCoupon() {
 <template>
   <section class="container mx-auto p-4 md:p-6 lg:p-8">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <!-- Cart items -->
       <div
         class="lg:col-span-2 bg-white dark:bg-gray-900 border rounded-md overflow-hidden"
       >
-        <!-- header -->
         <div
-          class="grid grid-cols-12 px-4 py-3 text-sm font-semibold text-gray-500"
+          class="hidden sm:grid grid-cols-12 px-4 py-3 text-xs sm:text-sm font-semibold text-gray-500"
         >
           <div class="col-span-6">Products</div>
           <div class="col-span-2">Price</div>
@@ -55,51 +52,58 @@ function applyCoupon() {
           <div class="col-span-2">Total</div>
         </div>
 
-        <!-- items -->
         <div class="divide-y">
           <div
             v-for="item in cart.items"
             :key="item.id"
-            class="grid grid-cols-12 items-center px-4 py-4 gap-2"
+            class="grid grid-cols-12 items-center px-3 sm:px-4 py-4 gap-3"
           >
-            <div class="col-span-6 flex items-center gap-3">
+            <div class="col-span-12 sm:col-span-6 flex items-center gap-3">
               <img
                 :src="item.image"
                 :alt="item.name"
-                class="w-14 h-14 rounded object-cover"
+                class="w-16 h-16 sm:w-14 sm:h-14 rounded object-cover"
               />
               <div>
-                <p class="font-medium">{{ item.name }}</p>
-                <p class="text-xs text-gray-500">SKU: 1995751877966</p>
+                <p class="font-medium text-sm sm:text-base">{{ item.name }}</p>
+                <p class="text-[10px] sm:text-xs text-gray-500">
+                  SKU: 1995751877966
+                </p>
               </div>
             </div>
-            <div class="col-span-2 text-gray-700">
+            <div
+              class="col-span-6 sm:col-span-2 text-gray-700 text-sm sm:text-base"
+            >
               {{ currency(item.price) }}
             </div>
-            <div class="col-span-2">
-              <div class="flex items-center gap-1 w-full">
+            <div class="col-span-6 sm:col-span-2">
+              <div class="flex items-center gap-2 w-full">
                 <button
-                  class="px-1.5 py-2 w-20 h-5 cursor-pointer rounded-full bg-green-600 text-white flex items-center justify-center"
+                  class="px-2 py-2 min-w-8 h-8 cursor-pointer rounded-full bg-green-600 text-white flex items-center justify-center"
                   @click="cart.decrement(item.id)"
                 >
                   -
                 </button>
-                <span class="w-full text-center">{{ item.quantity }}</span>
+                <span class="w-8 text-center text-sm sm:text-base">{{
+                  item.quantity
+                }}</span>
                 <button
-                  class="px-1 py-2 w-20 h-5 cursor-pointer rounded-full bg-green-600 text-white flex items-center justify-center"
+                  class="px-2 py-2 min-w-8 h-8 cursor-pointer rounded-full bg-green-600 text-white flex items-center justify-center"
                   @click="cart.increment(item.id)"
                 >
                   +
                 </button>
                 <button
-                  class="ml-2 text-gray-500 cursor-pointer px-2 py-1 hover:bg-red-500 hover:text-white border rounded-md border-red-500 transition-all duration-150"
+                  class="ml-2 text-gray-500 cursor-pointer px-2 py-1 hover:bg-red-500 hover:text-white border rounded-md border-red-500 transition-all duration-150 text-xs sm:text-sm"
                   @click="cart.remove(item.id)"
                 >
                   Remove
                 </button>
               </div>
             </div>
-            <div class="col-span-2 font-semibold text-green-600">
+            <div
+              class="col-span-12 sm:col-span-2 font-semibold text-green-600 text-sm sm:text-base"
+            >
               {{ currency(item.price * item.quantity) }}
             </div>
           </div>
@@ -112,10 +116,11 @@ function applyCoupon() {
         </div>
       </div>
 
-      <!-- Cart summary -->
       <div class="bg-white dark:bg-gray-900 border rounded-md p-4 h-fit">
         <p class="font-semibold mb-3">Cart Totals</p>
-        <div class="flex items-center gap-2 mb-4">
+        <div
+          class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mb-4"
+        >
           <Input
             v-model="coupon"
             placeholder="Enter coupon code here..."
