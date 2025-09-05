@@ -1,9 +1,10 @@
 <script setup>
 import { Button } from "@/components/ui/button";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { Switch } from "@/components/ui/switch";
-import { useRouter } from "vue-router";
-const router = useRouter();
+import { useWishlistStore } from "@/stores/wishlist";
+import { useCartStore } from "@/stores/cart";
+
 const isDark = ref(false);
 const toggleTheme = () => {
   isDark.value = !isDark.value;
@@ -15,6 +16,12 @@ const toggleTheme = () => {
 };
 
 const showMobileMenu = ref(false);
+
+const wishlistStore = useWishlistStore();
+const cartStore = useCartStore();
+
+const wishlistCount = computed(() => wishlistStore.count);
+const cartCount = computed(() => cartStore.count);
 </script>
 
 <template>
@@ -50,7 +57,7 @@ const showMobileMenu = ref(false);
         ></Switch>
       </div>
 
-      <div class="cursor-pointer">
+      <RouterLink to="/likes" class="relative flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -59,49 +66,61 @@ const showMobileMenu = ref(false);
         >
           <path
             fill="currentColor"
-            d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"
-            stroke-width="0.5"
-            stroke="currentColor"
+            d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3"
           />
         </svg>
-      </div>
-
-      <div class="cursor-pointer" @click="router.push('/cart')">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 48 48"
+        <span
+          v-if="wishlistCount"
+          class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1 min-w-5 text-center"
         >
-          <g fill="none">
-            <path d="M39 32H13L8 12h36z" />
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="4"
-              d="M3 6h3.5L8 12m0 0l5 20h26l5-20z"
-            />
-            <circle
-              cx="13"
-              cy="39"
-              r="3"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="4"
-            />
-            <circle
-              cx="39"
-              cy="39"
-              r="3"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="4"
-            />
-          </g>
-        </svg>
+          {{ wishlistCount }}
+        </span>
+      </RouterLink>
+
+      <div class="relative">
+        <RouterLink to="/cart" class="cart-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 48 48"
+          >
+            <g fill="none">
+              <path d="M39 32H13L8 12h36z" />
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="4"
+                d="M3 6h3.5L8 12m0 0l5 20h26l5-20z"
+              />
+              <circle
+                cx="13"
+                cy="39"
+                r="3"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="4"
+              />
+              <circle
+                cx="39"
+                cy="39"
+                r="3"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="4"
+              />
+            </g>
+          </svg>
+          <span
+            v-if="cartCount > 0"
+            class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full px-1 min-w-5 text-center"
+          >
+            {{ cartCount }}
+          </span>
+        </RouterLink>
       </div>
 
       <Button class="cursor-pointer hidden md:flex">
@@ -198,5 +217,25 @@ const showMobileMenu = ref(false);
 }
 .nav-button:hover::before {
   width: 100%;
+}
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #46a358;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon {
+  position: relative;
+  display: inline-block;
 }
 </style>

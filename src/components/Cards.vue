@@ -61,7 +61,7 @@ import {
         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
         data-aos="fade-up"
       >
-        <RouterLink to="shop/Card">
+        <RouterLink to="/shop/Card">
           <div class="w-full cursor-pointer" data-aos="zoom-in">
             <div class="w-full h-auto overflow-hidden rounded-lg">
               <img
@@ -80,7 +80,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card1">
+        <RouterLink to="/shop/Card1">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"
@@ -103,7 +103,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card2">
+        <RouterLink to="/shop/Card2">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"
@@ -126,7 +126,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card3">
+        <RouterLink to="/shop/Card3">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"
@@ -149,7 +149,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card4">
+        <RouterLink to="/shop/Card4">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"
@@ -172,7 +172,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card5">
+        <RouterLink to="/shop/Card5">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"
@@ -195,7 +195,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card6">
+        <RouterLink to="/shop/Card6">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"
@@ -218,7 +218,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card7">
+        <RouterLink to="/shop/Card7">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"
@@ -241,7 +241,7 @@ import {
             </p>
           </div>
         </RouterLink>
-        <RouterLink to="shop/Card8">
+        <RouterLink to="/shop/Card8">
           <div
             class="w-full cursor-pointer"
             data-aos="zoom-in"

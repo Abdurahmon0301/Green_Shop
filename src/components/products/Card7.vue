@@ -20,7 +20,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Minus, Plus, ShoppingCart, Heart } from "lucide-vue-next";
 import End from "@/components/End.vue";
+import { useCartStore } from "@/stores/cart";
+import { useRoute } from "vue-router";
+import Flower8 from "@/assets/Flower8.png";
+import { useWishlistStore } from "@/stores/wishlist";
+const cartStore = useCartStore();
+const wishlistStore = useWishlistStore();
 
+const route = useRoute();
 const selec = ref("page1");
 const selectPage = (page) => {
   selec.value = page;
@@ -34,7 +41,15 @@ const selectImg = (id) => {
 const liked = ref(false);
 const toggleLike = () => {
   liked.value = !liked.value;
+  wishlistStore.toggle({
+    id: route.fullPath,
+    name: "Barberton Daisy",
+    price: 119,
+    image: Flower8,
+  });
 };
+
+const isLiked = () => wishlistStore.has(route.fullPath);
 
 const selected = ref(null);
 const selectBtn = (btn) => {
@@ -174,7 +189,7 @@ function decrease() {
             </button>
             <Input
               type="number"
-              v-model="qty"
+              v-model.number="qty"
               class="w-16 text-center border-0 focus:ring-0"
             />
             <button @click="increase" class="p-2">
@@ -184,18 +199,32 @@ function decrease() {
           <Button class="bg-green-600 hover:bg-green-700 text-white">
             BUY NOW
           </Button>
-          <Button variant="outline" class="flex gap-2">
+          <Button
+            variant="outline"
+            class="flex gap-2"
+            @click="
+              cartStore.add(
+                {
+                  id: route.fullPath,
+                  name: 'Barberton Daisy',
+                  price: 119,
+                  image: Flower8,
+                },
+                qty.value
+              )
+            "
+          >
             <ShoppingCart class="w-4 h-4" /> ADD TO CART
           </Button>
           <Button
             @click="toggleLike"
             variant="outline"
             class="rounded-full transition-colors"
-            :class="liked ? 'text-red-500' : 'text-gray-500'"
+            :class="isLiked() ? 'text-red-500' : 'text-gray-500'"
           >
             <Heart
               class="w-4 h-4"
-              :class="liked ? 'fill-red-500' : 'fill-transparent'"
+              :class="isLiked() ? 'fill-red-500' : 'fill-transparent'"
             />
           </Button>
         </div>

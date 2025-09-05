@@ -20,7 +20,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Minus, Plus, ShoppingCart, Heart } from "lucide-vue-next";
 import End from "@/components/End.vue";
+import { useCartStore } from "@/stores/cart";
+import { useRoute } from "vue-router";
+import Flower4 from "@/assets/Flower4.png";
+import { useWishlistStore } from "@/stores/wishlist";
+const cartStore = useCartStore();
+const wishlistStore = useWishlistStore();
 
+const route = useRoute();
 const selec = ref("page1");
 const selectPage = (page) => {
   selec.value = page;
@@ -34,7 +41,15 @@ const selectImg = (id) => {
 const liked = ref(false);
 const toggleLike = () => {
   liked.value = !liked.value;
+  wishlistStore.toggle({
+    id: route.fullPath,
+    name: "Barberton Daisy",
+    price: 119,
+    image: Flower4,
+  });
 };
+
+const isLiked = () => wishlistStore.has(route.fullPath);
 
 const selected = ref(null);
 const selectBtn = (btn) => {
@@ -74,8 +89,14 @@ function decrease() {
       </Breadcrumb>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-8" data-aos="fade-up">
-      <div class="flex flex-col md:flex-row gap-4 items-center" data-aos="zoom-in">
+    <section
+      class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mt-8"
+      data-aos="fade-up"
+    >
+      <div
+        class="flex flex-col md:flex-row gap-4 items-center"
+        data-aos="zoom-in"
+      >
         <div
           class="flex flex-row md:flex-col gap-4 w-full md:w-24 justify-center"
         >
@@ -168,7 +189,7 @@ function decrease() {
             </button>
             <Input
               type="number"
-              v-model="qty"
+              v-model.number="qty"
               class="w-16 text-center border-0 focus:ring-0"
             />
             <button @click="increase" class="p-2">
@@ -178,18 +199,32 @@ function decrease() {
           <Button class="bg-green-600 hover:bg-green-700 text-white">
             BUY NOW
           </Button>
-          <Button variant="outline" class="flex gap-2">
+          <Button
+            variant="outline"
+            class="flex gap-2"
+            @click="
+              cartStore.add(
+                {
+                  id: route.fullPath,
+                  name: 'Barberton Daisy',
+                  price: 119,
+                  image: Flower4,
+                },
+                qty.value
+              )
+            "
+          >
             <ShoppingCart class="w-4 h-4" /> ADD TO CART
           </Button>
           <Button
             @click="toggleLike"
             variant="outline"
             class="rounded-full transition-colors"
-            :class="liked ? 'text-red-500' : 'text-gray-500'"
+            :class="isLiked() ? 'text-red-500' : 'text-gray-500'"
           >
             <Heart
               class="w-4 h-4"
-              :class="liked ? 'fill-red-500' : 'fill-transparent'"
+              :class="isLiked() ? 'fill-red-500' : 'fill-transparent'"
             />
           </Button>
         </div>
@@ -306,10 +341,16 @@ function decrease() {
       </div>
     </section>
 
-    <p class="text-xl md:text-2xl font-bold text-green-600 my-16 md:my-20" data-aos="fade-up">
+    <p
+      class="text-xl md:text-2xl font-bold text-green-600 my-16 md:my-20"
+      data-aos="fade-up"
+    >
       Related Products
     </p>
-    <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6" data-aos="fade-up">
+    <section
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+      data-aos="fade-up"
+    >
       <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
           <img
@@ -329,8 +370,8 @@ function decrease() {
             alt=""
           />
         </div>
-        <p>African Violet</p>
-        <p class="text-green-600 font-bold">$199.00</p>
+        <p class="mt-2 text-sm md:text-base">African Violet</p>
+        <p class="text-green-600 font-bold text-sm md:text-base">$199.00</p>
       </div>
       <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
@@ -340,8 +381,8 @@ function decrease() {
             alt=""
           />
         </div>
-        <p>Beach Spider Lily</p>
-        <p class="text-green-600 font-bold">$129.00</p>
+        <p class="mt-2 text-sm md:text-base">Beach Spider Lily</p>
+        <p class="text-green-600 font-bold text-sm md:text-base">$129.00</p>
       </div>
       <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
@@ -351,8 +392,8 @@ function decrease() {
             alt=""
           />
         </div>
-        <p>Blushing Bromeliad</p>
-        <p class="text-green-600 font-bold">$139.00</p>
+        <p class="mt-2 text-sm md:text-base">Blushing Bromeliad</p>
+        <p class="text-green-600 font-bold text-sm md:text-base">$139.00</p>
       </div>
       <div class="cursor-pointer" data-aos="zoom-in">
         <div class="w-full overflow-hidden rounded-lg">
@@ -362,8 +403,8 @@ function decrease() {
             alt=""
           />
         </div>
-        <p>Aluminum Plant</p>
-        <p class="text-green-600 font-bold">$179.00</p>
+        <p class="mt-2 text-sm md:text-base">Aluminum Plant</p>
+        <p class="text-green-600 font-bold text-sm md:text-base">$179.00</p>
       </div>
     </section>
 

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Cards from "@/components/Cards.vue";
 import End from "@/components/End.vue";
+const isDark = ref(false);
 const modelValue = ref([0, 500]);
 </script>
 <template>

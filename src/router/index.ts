@@ -44,6 +44,11 @@ const router = createRouter({
       name: "cart",
       component: lazyLoad("cart"),
     },
+    {
+      path: "/likes",
+      name: "likes",
+      component: lazyLoad("likes"),
+    },
   ],
   scrollBehavior() {
     return { top: 0 };
